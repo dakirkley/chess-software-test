@@ -101,11 +101,12 @@ export default function ChessGame() {
     }
   };
 
-  const onPromotionPieceSelect = (piece: string) => {
+  const onPromotionPieceSelect = (piece?: string) => {
     if (piece && moveFrom && moveTo) {
       makeMove(moveFrom, moveTo, piece[1].toLowerCase());
     }
     setShowPromotionDialog(false);
+    return true;
   };
 
   const onSquareRightClick = (square: Square) => {
